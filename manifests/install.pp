@@ -29,6 +29,7 @@ class nsclient::install {
         url                   => $source,
         destination_directory => $nsclient::download_destination,
         require               => File[$nsclient::download_destination],
+        proxy_address         => $nsclient::proxy_address,
       }
 
       package { $nsclient::package_name:
